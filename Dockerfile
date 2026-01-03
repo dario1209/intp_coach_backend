@@ -1,4 +1,4 @@
-# Build stage
+# Build stage - compile TypeScript and generate Prisma client
 FROM node:18-alpine AS build
 
 WORKDIR /app
