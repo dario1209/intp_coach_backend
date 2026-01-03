@@ -1,5 +1,5 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
-import cors from './middleware/cors';
+import corsMiddleware from './middleware/cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { errorHandler } from './middleware/errorHandler';
@@ -12,7 +12,7 @@ const app: Express = express();
 
 // Security & standard middleware
 app.use(helmet());
-app.use(cors());
+app.use(corsMiddleware);
 app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true }));
 
