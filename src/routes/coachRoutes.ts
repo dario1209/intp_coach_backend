@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { coachChat, coachPlan, coachNudge } from '../controllers/coachController';
+import { coachChat, coachPlan, coachNudge } from '../controllers/coachControllers';
 
 const router = Router();
 

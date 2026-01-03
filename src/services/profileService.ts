@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 const profileSchema = z.object({
   mode: z.enum(['exploration', 'execution', 'reflection']),
   activeExperiment: z.string().optional(),
-  focusScore: z.number().optional().min(0).max(100),
+  focusScore: z.number().min(0).max(100).optional(),
   preferences: z.record(z.string(), z.any()).optional(),
 });
 
