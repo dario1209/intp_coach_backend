@@ -11,8 +11,10 @@ import { logger } from './utils/logger';
 const app: Express = express();
 
 // Security & standard middleware
-app.use(helmet());
 app.use(corsMiddleware);
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" }
+}));
 app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true }));
 
