@@ -82,7 +82,7 @@ NODE_ENV=development
 # Perplexity AI
 PERPLEXITY_API_KEY=your_api_key_here
 PERPLEXITY_BASE_URL=https://api.perplexity.ai
-PERPLEXITY_MODEL=llama-3.1-sonar-large-128k-online
+PERPLEXITY_MODEL=sonaer-pro
 
 # Database
 DATABASE_URL=postgresql://user:pass@localhost:5432/intp_coach
@@ -193,7 +193,7 @@ Instead of "work harder", suggest "test 25min focus blocks vs 90min deep work se
 | `NODE_ENV` | Environment mode | development |
 | `PERPLEXITY_API_KEY` | Perplexity AI key | - |
 | `PERPLEXITY_BASE_URL` | Perplexity API endpoint | https://api.perplexity.ai |
-| `PERPLEXITY_MODEL` | AI model to use | llama-3.1-sonar-large-128k-online |
+| `PERPLEXITY_MODEL` | AI model to use | sonar-pro |
 | `DATABASE_URL` | PostgreSQL connection string | - |
 | `FRONTEND_ORIGIN` | Allowed CORS origin | http://localhost:3000 |
 | `LOG_LEVEL` | Winston log level | info |
