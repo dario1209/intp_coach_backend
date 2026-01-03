@@ -32,11 +32,13 @@ class PerplexityService {
       }, config);
 
       if (response.status >= 400) {
-        throw new Error(`Perplexity API error: ${response.status}`);
+        logger.error('Perplexity API error response:', response.data);
+        throw new Error(`Perplexity API error: ${response.status} - ${JSON.stringify(response.data)}`);
       }
 
       const choice = response.data.choices?.[0];
       if (!choice) {
+        logger.error('No choices in Perplexity response:', response.data);
         throw new Error('No response from Perplexity');
       }
 
@@ -47,8 +49,12 @@ class PerplexityService {
           tokens: choice.finish_reason === 'stop' ? choice.message.tokens : 0,
         },
       };
-    } catch (error) {
-      logger.error('Perplexity service error:', error);
+    } catch (error: any) {
+      logger.error('Perplexity service error:', {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status
+      });
       throw new Error('Failed to get response from coach');
     }
   }
