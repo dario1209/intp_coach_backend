@@ -1,0 +1,43 @@
+{
+    "name": "intp-coach-backend",
+    "version": "0.1.0",
+    "description": "INTP-centric productivity coach API",
+    "main": "dist/index.js",
+    "scripts": {
+      "dev": "nodemon --exec ts-node --esm src/index.ts",
+      "build": "tsc",
+      "start": "node dist/index.js",
+      "db:generate": "prisma generate",
+      "db:migrate": "prisma migrate dev",
+      "db:push": "prisma db push",
+      "lint": "eslint src/**/*.ts",
+      "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+      "express": "^4.19.2",
+      "cors": "^2.8.5",
+      "helmet": "^7.1.0",
+      "morgan": "^1.10.0",
+      "dotenv": "^16.4.5",
+      "zod": "^3.23.8",
+      "axios": "^1.7.7",
+      "prisma": "^5.18.0",
+      "@prisma/client": "^5.18.0"
+    },
+    "devDependencies": {
+      "@types/express": "^4.17.21",
+      "@types/cors": "^2.8.17",
+      "@types/node": "^22.7.4",
+      "@types/morgan": "^1.9.9",
+      "typescript": "^5.6.2",
+      "ts-node": "^10.9.2",
+      "nodemon": "^3.1.7",
+      "eslint": "^8.57.0",
+      "@typescript-eslint/eslint-plugin": "^8.8.0",
+      "@typescript-eslint/parser": "^8.8.0"
+    },
+    "engines": {
+      "node": ">=18.0.0"
+    }
+  }
+  

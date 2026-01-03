@@ -1,0 +1,37 @@
+intp_coach_backend/
+  .env.example              # PERPLEXITY_API_KEY, DATABASE_URL, FRONTEND_ORIGIN
+  package.json
+  tsconfig.json             # if using TypeScript
+  src/
+    index.ts                # app bootstrap, listen on PORT
+    server.ts               # Express app setup, middleware
+    config/
+      env.ts                # load + validate env variables
+      perplexity.ts         # base URL, model names, timeouts
+    routes/
+      coachRoutes.ts        # /coach/chat, /coach/plan, /coach/nudge
+      userRoutes.ts         # /user/profile, /user/preferences
+    controllers/
+      coachController.ts    # request–response logic for coach endpoints
+      userController.ts
+    services/
+      perplexityService.ts  # wrapper that calls Perplexity chat/completions
+      profileService.ts     # generate INTP-tailored instructions/personas
+      planService.ts        # convert chat into structured plans/tasks
+    models/
+      User.ts               # if using ORM (Prisma/Drizzle/TypeORM)
+      Session.ts
+      Task.ts
+    db/
+      client.ts             # database client (e.g. Prisma/pg)
+      migrations/           # optional
+    middleware/
+      errorHandler.ts
+      requestLogger.ts
+      cors.ts               # allow Vercel domain
+    utils/
+      logger.ts
+      schemaValidation.ts   # zod/joi for payloads
+      promptTemplates.ts    # system prompts for INTP productivity coach
+  prisma/ or drizzle/       # if using an ORM (optional)
+  Dockerfile                # optional; Railway can work without it. [web:19]
