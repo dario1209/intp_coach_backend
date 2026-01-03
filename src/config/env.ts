@@ -6,10 +6,10 @@ const envSchema = z.object({
   
   PERPLEXITY_API_KEY: z.string().min(1),
   PERPLEXITY_BASE_URL: z.string().url().default('https://api.perplexity.ai'),
-  PERPLEXITY_MODEL: z.string().default('llama-3.1-sonar-large-128k-online'),
+  PERPLEXITY_MODEL: z.string().default('sonar-pro'),
   
   DATABASE_URL: z.string().url(),
-  FRONTEND_ORIGIN: z.string().url(),
+  FRONTEND_ORIGIN: z.string().url().transform(url => url.replace(/\/$/, '')),
   
   LOG_LEVEL: z.enum(['error', 'warn', 'info', 'debug']).default('info'),
 });
